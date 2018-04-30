@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/djavorszky/ddn/common/inet"
-	"github.com/djavorszky/ddn/common/status"
+	"github.com/djavorszky/ddn-common/inet"
+	"github.com/djavorszky/ddn-common/status"
 	"github.com/djavorszky/notif"
 	"github.com/djavorszky/sutils"
 	webpush "github.com/sherclockholmes/webpush-go"

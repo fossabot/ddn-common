@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/djavorszky/ddn/common/logger"
-	"github.com/djavorszky/ddn/common/status"
+	"github.com/djavorszky/ddn-common/logger"
+	"github.com/djavorszky/ddn-common/status"
 )
 
 // JSONMessage is an interface that can hold many types of messages that

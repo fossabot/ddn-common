@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/djavorszky/ddn/common/logger"
+	"github.com/djavorszky/ddn-common/logger"
 )
 
 // Logger logs queries to the log with some extra information
