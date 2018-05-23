@@ -26,3 +26,41 @@ func TestShouldLog(t *testing.T) {
 		}
 	}
 }
+
+func TestParse(t *testing.T) {
+	type args struct {
+		level string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    LogLevel
+		wantErr bool
+	}{
+		{"valid debug", args{"debug"}, DEBUG, false},
+		{"valid DEBUG", args{"DEBUG"}, DEBUG, false},
+		{"valid info", args{"info"}, INFO, false},
+		{"valid INFO", args{"INFO"}, INFO, false},
+		{"valid warn", args{"warn"}, WARN, false},
+		{"valid WARN", args{"WARN"}, WARN, false},
+		{"valid error", args{"error"}, ERROR, false},
+		{"valid ERROR", args{"ERROR"}, ERROR, false},
+		{"valid fatal", args{"fatal"}, FATAL, false},
+		{"valid FATAL", args{"FATAL"}, FATAL, false},
+
+		{"invalid", args{"asdf"}, 0, true},
+		{"INVALID", args{"NOTHING"}, 0, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := Parse(tt.args.level)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("Parse() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if got != tt.want {
+				t.Errorf("Parse() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
