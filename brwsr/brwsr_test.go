@@ -192,8 +192,10 @@ func TestImportable(t *testing.T) {
 
 		{"test.sql", true},
 		{"test.dmp", true},
+		{"test.dump", true},
 		{"test.dpdmp", true},
 		{"test.bak", true},
+		{"test.bk", true},
 
 		{"test.zip", true},
 		{"test.tar", true},
